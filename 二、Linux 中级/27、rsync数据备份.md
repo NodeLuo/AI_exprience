@@ -7,8 +7,16 @@
 	本地     命令    选项参数    源文件 目标位置
 	
 	示例：
-		#将a.txt拷贝到/opt下
-		rsync -avz a.txt /opt/
+		#将a.txt拷贝到dir下
+		[root@backup ~]# rsync -avz a.txt dir
+		sending incremental file list
+		a.txt
+		
+		sent 123 bytes  received 35 bytes  316.00 bytes/sec
+		total size is 35  speedup is 0.22
+		
+		#再次将a.txt拷贝到dir下，此时默认为增量拷贝
+
 
 
 查看三种模式：
