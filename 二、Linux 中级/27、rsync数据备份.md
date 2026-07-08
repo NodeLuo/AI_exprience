@@ -49,8 +49,10 @@
 			deleting b.txt
 			./
 
-
-
+2、远程模式
+    Access via remote shell:
+         Pull: rsync [OPTION...] [USER@]HOST:SRC... [DEST]
+         Push: rsync [OPTION...] SRC... [USER@]HOST:DEST
 
 
 
