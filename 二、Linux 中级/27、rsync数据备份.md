@@ -142,7 +142,17 @@
 	
 	e.测试检查（873端口）
 		[root@backup ~]# netstat -tnulp
-		tcp6  0   0   :::873      :::*     LISTEN     2800/rsync    
+		tcp6  0   0   :::873      :::*     LISTEN     2800/rsync
+	
+	
+	示例：
+		#推送
+		[root@web01 ~]# rsync a.txt rsync_backup@10.0.0.41::backup
+		Password:
+		
+		#拉取
+		 
+
 
 
 
