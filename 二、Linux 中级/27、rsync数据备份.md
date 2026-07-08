@@ -127,11 +127,10 @@
 	d.启动服务
 		[root@backup ~]# systemctl start rsyncd
 		[root@backup ~]# systemctl enable rsyncd
-		[root@backup ~]# netstat -tnulp
-		tcp6  0   0   :::873      :::*     LISTEN     2800/rsync          
-
 	
-	e.测试检查（873）
+	e.测试检查（873端口）
+		[root@backup ~]# netstat -tnulp
+		tcp6  0   0   :::873      :::*     LISTEN     2800/rsync    
 
 
 
