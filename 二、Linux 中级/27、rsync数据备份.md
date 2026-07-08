@@ -56,16 +56,20 @@
          拉取   命令    参数选项     用户  主机  源文件  目标位置
          #HOST:主机IP地址 域名 主机名
          Push: rsync [OPTION...] SRC... [USER@]HOST:DEST
+         推送   命令    参数选项     源文件  用户  主机  目标位置
     
     示例：
 		----------------------------------------------------
-		#10.0.0.41 拉取 10.0.0.7 中的 /root/a.txt 到本地当前目录
+		#10.0.0.41 拉取 10.0.0.7 中的 /root/bob.txt 到本地当前目录
 			[root@backup ~]# rsync -avz root@10.0.0.7:/root/bob.txt ./
 			#这里使用172.16.1.7也行，只要局域网可以连通就行
 			Are you sure you want to continue connecting (yes/no)? yes
-			root@10.0.0.7's password: 
+			root@10.0.0.7 s password: 
 			receiving incremental file list
-			bob.txt
+			bob.txt                                                            
+		----------------------------------------------------
+		#将10.0.0.41本地当前目录的 bob1.txt 推送到 10.0.0.7 的 /root/下
+		
 
 
 
