@@ -111,7 +111,18 @@
 	c.根据配置文件创建必要数据
 		（1）创建rsync虚拟用户
 			[root@backup ~]# useradd -M -s /sbin/nologin rsync
-		
+		（2）创建密码文件
+			[root@backup ~]# cat /etc/rsync.passwd
+			rsync_backup:123456
+		（3）修改密码权限为600
+			[root@backup ~]# chmod 600 /etc/rsync.passwd
+			[root@backup ~]# ll /etc/rsync.passwd
+			-rw------- 1 root root 20 Jul  8 21:58 /etc/rsync.passwd
+		（4）创建backup目录
+			[root@backup ~]# mkdir /backup
+			[root@backup ~]# ll -d /backup
+			drwxr-xr-x 2 root root 6 Jul  8 22:01 /backup
+
 	d.启动服务
 	
 	d.测试检查
