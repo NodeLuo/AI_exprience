@@ -61,8 +61,8 @@
 		----------------------------------------------------
 		#10.0.0.41 拉取 10.0.0.7 中的 /root/a.txt 到本地当前目录
 			[root@backup ~]# rsync -avz root@10.0.0.7:/root/bob.txt ./
+			#这里使用172.16.1.7也行，只要局域网可以连通就行
 			Are you sure you want to continue connecting (yes/no)? yes
-			Warning: Permanently added '10.0.0.7' (ECDSA) to the list of known hosts.
 			root@10.0.0.7's password: 
 			receiving incremental file list
 			bob.txt
