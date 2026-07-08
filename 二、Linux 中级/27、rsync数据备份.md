@@ -52,7 +52,8 @@
 2、远程模式
     Access via remote shell:
          Pull: rsync [OPTION...] [USER@]HOST:SRC... [DEST]
-         拉取   命令    参数选项     用户  主机
+         拉取   命令    参数选项     用户  主机  源文件  目标位置
+         HOST:主机IP地址 域名 主机名
          Push: rsync [OPTION...] SRC... [USER@]HOST:DEST
 
 
