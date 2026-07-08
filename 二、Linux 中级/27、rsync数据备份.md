@@ -84,6 +84,7 @@
 3、守护进程模式（企业常用）
 	a.安装服务
 		yum -y install rsync
+	
 	b.配置服务
 		配置文件：/etc/rsyncd.conf
 		
@@ -107,7 +108,7 @@
 		path = /backup          # 定义接收备份数据目录
 		
 		#此时/backup的权限是rwxr-xr-x root root ,要修改成rwxr-xr-x rsync rsync
-		
+	
 	c.根据配置文件创建必要数据
 		（1）创建rsync虚拟用户
 			[root@backup ~]# useradd -M -s /sbin/nologin rsync
@@ -122,15 +123,15 @@
 			[root@backup ~]# mkdir /backup
 			[root@backup ~]# ll -d /backup
 			drwxr-xr-x 2 root root 6 Jul  8 22:01 /backup
-
+	
 	d.启动服务
 		[root@backup ~]# systemctl start rsyncd
-		
+		[root@backup ~]# systemctl enable rsyncd
 		[root@backup ~]# netstat -tnulp
 		tcp6  0   0   :::873      :::*     LISTEN     2800/rsync          
 
 	
-	e.测试检查
+	e.测试检查（873）
 
 
 
