@@ -85,6 +85,7 @@
 	a.安装服务
 		yum -y install rsync
 	b.配置服务
+		配置文件：/etc/rsyncd.conf
 	c.启动服务
 	d.测试检查
 
