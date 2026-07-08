@@ -69,7 +69,11 @@
 			bob.txt                                                            
 		----------------------------------------------------
 		#将10.0.0.41本地当前目录的 bob1.txt 推送到 10.0.0.7 的 /root/下
-		
+			[root@backup ~]# rsync -avz ./bob1.txt root@10.0.0.7:/root/
+			root@10.0.0.7 s password: 
+			sending incremental file list
+			bob1.txt
+
 
 
 
