@@ -130,6 +130,11 @@
 			[root@backup ~]# mkdir /backup
 			[root@backup ~]# ll -d /backup
 			drwxr-xr-x 2 root root 6 Jul  8 22:01 /backup
+		（5）修改backup属主属组
+			[root@backup ~]# chown rsync.rsync /backup
+			[root@backup ~]# ll -d /backup
+			drwxr-xr-x 2 rsync rsync 6 Jul  8 22:01 /backup
+
 	
 	d.启动服务
 		[root@backup ~]# systemctl start rsyncd
