@@ -87,28 +87,6 @@
 	b.配置服务
 		配置文件：/etc/rsyncd.conf
 		
-		[root@backup ~]# cat /etc/rsyncd.conf
-		# /etc/rsyncd: configuration file for rsync daemon mode
-		
-		# See rsyncd.conf man page for more options.
-		
-		# configuration example:
-		
-		# uid = nobody                    # 运行进程的用户
-		# gid = nobody                    # 运行进程的用户组
-		# use chroot = yes                # 监听端口
-		# max connections = 4
-		# pid file = /var/run/rsyncd.pid
-		# exclude = lost+found/
-		# transfer logging = yes
-		# timeout = 900
-		# ignore nonreadable = yes
-		# dont compress   = *.gz *.tgz *.zip *.z *.Z *.rpm *.deb *.bz2
-		
-		# [ftp]
-		#        path = /home/ftp
-		#        comment = ftp export area
-		
 	c.启动服务
 	d.测试检查
 
