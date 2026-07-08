@@ -87,6 +87,23 @@
 	b.配置服务
 		配置文件：/etc/rsyncd.conf
 		
+		‐‐‐ 配置详解 
+		[root@backup ~]# vim /etc/rsyncd.conf 
+		uid = rsync                     # 运行进程的用户 
+		gid = rsync                     # 运行进程的用户组 
+		port = 873                      # 监听端口 
+		fake super = yes                # 无需让rsync以root身份运行，允许接收文件的完整属性 
+		use chroot = no                 # 禁锢推送的数据至某个目录, 不允许跳出该目录 
+		max connections = 200           # 最大连接数 
+		timeout = 600                   # 超时时间 
+		ignore errors                   # 忽略错误信息 
+		read only = false               # 对备份数据可读写 
+		list = false                    # 不允许查看模块信息 
+		auth users = rsync_backup       # 定义虚拟用户，作为连接认证用户 
+		secrets file = /etc/rsync.passwd # 定义rsync服务用户连接认证密码文件路径 
+		[backup]                        # 定义模块信息 
+		comment = commit                # 模块注释信息 
+		path = /backup                  # 定义接收备份数据目录
 	c.启动服务
 	d.测试检查
 
