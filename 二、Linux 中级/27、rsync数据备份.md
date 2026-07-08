@@ -105,6 +105,8 @@
 		[backup]                # 定义模块信息 
 		comment = commit        # 模块注释信息 
 		path = /backup          # 定义接收备份数据目录
+		
+		#此时/backup的权限是rwxr-xr-x root root ,要修改成rwxr-xr-x rsync rsync
 	c.启动服务
 	d.测试检查
 
