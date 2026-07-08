@@ -7,18 +7,37 @@
 	本地     命令    选项参数    源文件 目标位置
 	
 	示例：
+		----------------------------------------------------
 		#将a.txt拷贝到dir下
-		[root@backup ~]# rsync -avz a.txt dir
-		sending incremental file list
-		a.txt
-		
-		sent 123 bytes  received 35 bytes  316.00 bytes/sec
-		total size is 35  speedup is 0.22
+			[root@backup ~]# rsync -avz a.txt dir
+			sending incremental file list
+			a.txt
 		
 		#再次将a.txt拷贝到dir下，此时默认为增量拷贝
 			此时进行的判断：
 				a.文件没变 -> 跳过
 				b.文件变了 -> 重新传整个文件
+		----------------------------------------------------
+		#拷贝dir1目录下的文件到dir2下
+			[root@backup ~]# ll dir1
+			total 0
+			-rw-r--r-- 1 root root 0 Jul  8 09:25 a.txt
+			-rw-r--r-- 1 root root 0 Jul  8 09:25 b.txt
+		#不包含目录
+			[root@backup ~]# rsync -avz dir1/ dir2  （类似cp dir1/* dir2）
+			sending incremental file list
+			./
+			a.txt
+			b.txt
+		#包含目录
+			[root@backup ~]# rsync -avz dir1 dir2
+			sending incremental file list
+			dir1/
+			dir1/a.txt
+			dir1/b.txt
+
+
+
 
 
 
