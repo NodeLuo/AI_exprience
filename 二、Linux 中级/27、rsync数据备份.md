@@ -151,7 +151,9 @@
 		Password:
 		
 		#拉取
-		 
+		[root@web01 ~]# rsync rsync_backup@10.0.0.41::backup/a.txt ./
+		Password: 
+
 
 
 
