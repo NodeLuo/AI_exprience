@@ -124,8 +124,15 @@
 			drwxr-xr-x 2 root root 6 Jul  8 22:01 /backup
 
 	d.启动服务
+		[root@backup ~]# systemctl start rsyncd
+[root@backup ~]# netstat -tnulp
+Active Internet connections (only servers)
+Proto Recv-Q Send-Q Local Address     Foreign Address   State      PID/Program name    
+
+tcp6       0      0 :::873                  :::*                    LISTEN      2800/rsync          
+
 	
-	d.测试检查
+	e.测试检查
 
 
 
