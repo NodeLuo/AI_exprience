@@ -101,9 +101,10 @@
 		list = false                    # 不允许查看模块信息 
 		auth users = rsync_backup       # 定义虚拟用户，作为连接认证用户 
 		secrets file = /etc/rsync.passwd # 定义rsync服务用户连接认证密码文件路径 
-		[backup]                        # 定义模块信息 
-		comment = commit                # 模块注释信息 
-		path = /backup                  # 定义接收备份数据目录
+		
+		[backup]                # 定义模块信息 
+		comment = commit        # 模块注释信息 
+		path = /backup          # 定义接收备份数据目录
 	c.启动服务
 	d.测试检查
 
