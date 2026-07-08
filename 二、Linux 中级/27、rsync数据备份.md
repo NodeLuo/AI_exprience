@@ -107,7 +107,13 @@
 		path = /backup          # 定义接收备份数据目录
 		
 		#此时/backup的权限是rwxr-xr-x root root ,要修改成rwxr-xr-x rsync rsync
-	c.启动服务
+		
+	c.根据配置文件创建必要数据
+		（1）创建rsync虚拟用户
+			[root@backup ~]# useradd -M -s /sbin/nologin rsync
+		
+	d.启动服务
+	
 	d.测试检查
 
 
