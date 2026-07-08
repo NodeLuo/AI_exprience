@@ -37,7 +37,19 @@
 			dir1/b.txt
 		----------------------------------------------------
 		#删除拷贝不同步内容
-		
+			[root@backup ~]# ll dir1
+			total 0
+			-rw-r--r-- 1 root root 0 Jul  8 09:25 a.txt
+			[root@backup ~]# ll dir2
+			total 0
+			-rw-r--r-- 1 root root 0 Jul  8 09:25 a.txt
+			-rw-r--r-- 1 root root 0 Jul  8 09:25 b.txt
+			[root@backup ~]# rsync -avz --delete dir1/ dir2
+			sending incremental file list
+			deleting b.txt
+			./
+
+
 
 
 
