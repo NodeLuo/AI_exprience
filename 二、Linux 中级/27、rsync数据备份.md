@@ -5,6 +5,10 @@
 1、本地模式
 	Local:  rsync [OPTION...] SRC... [DEST]
 	本地     命令    选项参数    源文件 目标位置
+	
+	示例：
+		#将a.txt拷贝到/opt下
+		rsync -avz a.txt /opt/
 
 
 查看三种模式：
