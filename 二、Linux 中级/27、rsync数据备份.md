@@ -52,7 +52,7 @@
 2、远程模式
     Access via remote shell:
          Pull: rsync [OPTION...] [USER@]HOST:SRC... [DEST]
-         拉取
+         拉取   命令    参数选项     用户  主机
          Push: rsync [OPTION...] SRC... [USER@]HOST:DEST
 
 
