@@ -80,4 +80,11 @@
 		./
 	
 	（3）企业案例：服务器代码中毒是用--delete进行无差异同步
+
+3.传输限速
+	参数：--bwlimit=1M
+	原因：防止占用带宽影响用户体验(P 显示进度)
+	（1）推送文件
+		[root@web01 ~]rsync -avzP --bwlimit=1M 1.mp4 rsync_backup@172.16.1.41::backup
+	
 ```
