@@ -29,5 +29,7 @@
 	方法二：
 		rsync的内置变量:RSYNC_PASSWORD（默认为空）
 		在执行rsync推送的过程中，先查找RSYNC_PASSWORD中是否存在密码，若没有则提示输入密码，有则直接使用该变量中的密码
-		
+		#临时设置环境变量，重启失效
+		[root@backup ~]# export RSYNC_PASSWORD=123456
+
 ```
