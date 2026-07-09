@@ -72,4 +72,11 @@
 	（2）若是拉取，以被拉取方文件为准保持一致，多出的自动删除
 		10.0.0.41: dir/a.txt dir/b.txt
 		10.0.0.7:dir/a.txt
+		
+		[root@backup ~]# rsync -avz --delete 10.0.0.7:dir/ dir
+		root@10.0.0.7 s password: 
+		receiving incremental file list
+		deleting b.txt
+		./
+
 ```
