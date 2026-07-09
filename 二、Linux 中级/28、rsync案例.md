@@ -23,5 +23,6 @@
 		（2）设置密码文件权限
 			[root@web01 ~]# chmod 600 /etc/rsync.pass
 		（3）使用rsync参数指定密码文件的位置
-			[root@backup ~]# rsync one.txt rsync_backup@172.16.1.41::backup --password-file=/etc/rsync.pass
+			[root@web01 ~]# rsync -avz one.txt rsync_backup@172.16.1.41::backup --password-file=/etc/rsync.pass
+
 ```
