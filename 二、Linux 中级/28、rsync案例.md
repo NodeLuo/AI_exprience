@@ -64,5 +64,12 @@
 		10.0.0.41：dir/a.txt
 		10.0.0.7: dir/a.txt dir/b.txt
 		
+		[root@backup ~]# rsync -avz --delete dir/ 10.0.0.7:dir
+		root@10.0.0.7 s password: 
+		sending incremental file list
+		deleting b.txt
+
 	（2）若是拉取，以被拉取方文件为准保持一致，多出的自动删除
+		10.0.0.41: dir/a.txt dir/b.txt
+		10.0.0.7:dir/a.txt
 ```
