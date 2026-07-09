@@ -94,5 +94,7 @@
 ```bash
 1、客户端提前准备存放备份的目录，目录命名规则如下：主机名_ip地址_时间
 	示例：/backup/nfs_172.16.1.31_2018-09-01
-	
+	（1）通用性指令
+		[root@web01 ~]# mkdir -p /backup/`hostname`_`hostname -I|awk '{print $1}'`_`date +%F-%H-%M`
+
 ```
