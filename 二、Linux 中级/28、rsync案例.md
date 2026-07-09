@@ -86,5 +86,11 @@
 	原因：防止占用带宽影响用户体验(P 显示进度)
 	（1）推送文件
 		[root@web01 ~]rsync -avzP --bwlimit=1M 1.mp4 rsync_backup@172.16.1.41::backup
-	
+
+```
+
+4、客户端需求
+
+```bash
+
 ```
