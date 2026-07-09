@@ -27,5 +27,6 @@
 			[root@web01 ~]# rsync -avz one.txt rsync_backup@172.16.1.41::backup --password-file=/etc/rsync.pass
 	
 	方法二：
-	
+		rsync的内置变量:RSYNC_PASSWORD（默认为空）
+		在执行rsync推送的过程中，先查找RSYNC_PASSWORD中是否存在密码，若没有则提示输入密码，有则直接使用该变量中的密码
 ```
