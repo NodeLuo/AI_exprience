@@ -78,5 +78,6 @@
 		receiving incremental file list
 		deleting b.txt
 		./
-
+	
+	（3）企业案例：服务器代码中毒是用--delete进行无差异同步
 ```
