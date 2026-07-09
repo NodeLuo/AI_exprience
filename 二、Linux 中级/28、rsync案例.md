@@ -19,5 +19,9 @@
 1、免密交互
 	传输过程中需要对方服务器的用户密码：
 		（1）将密码写入文件中
-		（2）使用rsync参数指定密码文件的位置
+			[root@backup ~]# echo 123456 > /etc/rsync.pass
+		（2）设置密码文件权限
+			[root@backup ~]# chmod 600 /etc/rsync.pass
+		（3）使用rsync参数指定密码文件的位置
+			[root@backup ~]# rsync one.txt rsync_backup@172.16.1.41::backup --password-file=/etc/rsync.pass
 ```
