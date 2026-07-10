@@ -99,9 +99,9 @@
 		
 		注意：此时时间会变化不固定，可以使用变量将时间固定，永久写到/etc/profile中
 		a.变量赋值
-			[root@backup ~]# DATE=`date +%F-%H-%M`
+			[root@web01 ~]# DATE=`date +%F-%H-%M`
 		b.输出变量
-			[root@backup ~]# echo $DATE
+			[root@web01 ~]# echo $DATE
 			2026-07-10-08-47
 	
 	（2）变量创建
