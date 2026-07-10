@@ -224,10 +224,12 @@ test.sh 脚本：
 	check.sh 脚本：
 		#1、服务端需要每天校验客户端推送过来的数据是否完整
 		Date=`date +%F`
-		md5sum -c /backup/*_*_*/*.log > /backup/$Date.log
+		md5sum -c /backup/*_*_*/*.log > /backup/$Date.log 2>/dev/null
 		
 		#2、将校验后的结果发送到邮箱
+		if [ `grep FAILED /backup/$Date.log|wc -l` -ge 1 ];then
 		mail -s "$Date 检查结果" x@qq.com < /backup/$Date.log &>/dev/null
+		fi
 		
 		#3、删除180天前的数据
 		find /backup -mtime +180|xargs rm -rf
