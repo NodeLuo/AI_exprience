@@ -197,7 +197,10 @@ test.sh 脚本：
 			#3、生成MD5值并写入md5.log中
 			md5sum /backup/$dir/*.tar.gz > /backup/$dir/md5.log
 	（2）服务端校验
-		
+		[root@backup ~]# mkdir -p /server/scripts
+		[root@backup ~]# cd /server/scripts
+		[root@backup scripts]# vim check.sh
+
 
 3.服务端需要每天校验的结果通知给管理员 
 4.服务端仅保留6个月的备份数据,其余的全部删除
