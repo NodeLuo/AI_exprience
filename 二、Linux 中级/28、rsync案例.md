@@ -138,16 +138,20 @@
 		Date=`date +%F-%H-%M`
 		dir=`hostname`_`hostname -I|awk '{print $1}'`_$Date
 		mkdir -p /backup/$dir
-	
 	（2）打包存入
 		tar zcf /backup/$dir/etc_$Date.tar.gz /etc/hosts /etc/passwd &>/dev/null
 
 3、客户端最后将备份的数据进行推送至备份服务器
-	（1）推送文件
-		rsync 
+	（1）赋值环境变量
+		export RSYNC_PASSWORD=123456
+	（2）推送文件
+		rsync -az /backup/$dir rsync_backup@172.16.1.41::backup
+
 ```
 
 ```bash
+脚本执行客户端需求：
+
 [root@web01 ~]# mkdir -p /server/scripts
 [root@web01 ~]# cd /server/scripts
 
