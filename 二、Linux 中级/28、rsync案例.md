@@ -96,5 +96,13 @@
 	示例：/backup/nfs_172.16.1.31_2018-09-01
 	（1）通用性指令
 		[root@web01 ~]# mkdir -p /backup/`hostname`_`hostname -I|awk '{print $1}'`_`date +%F-%H-%M`
+		
+		注意：此时时间会变化不固定，可以使用变量将时间固定，永久写到/etc/profile中
+		a.变量赋值
+			[root@backup ~]# DATE=`date +%F-%H-%M`
+		b.输出变量
+			[root@backup ~]# echo $DATE
+			2026-07-10-08-47
+
 
 ```
