@@ -218,7 +218,7 @@ test.sh 脚本：
 	（3）第三方邮箱授权，以QQ为例
 		QQ邮箱 -> 设置 -> 账号与安全 -> 安全设置 -> POP3/IMAP/SMTP/Exchange/CardDAV 服务 -> 点击开启（发送短信） -> 获取授权码
 	（4）发送邮件
-		mail -s "title" 253097001@qq.com < /backup/1.log
+		mail -s "title" 253097001@qq.com < /backup/1.log &>/dev/null
 		
 4.服务端仅保留6个月的备份数据,其余的全部删除
 ```
