@@ -127,5 +127,7 @@
 ```
 
 ```bash
+[root@web01 ~]# mkdir -p /server/scripts
+[root@web01 ~]# cd /server/scripts
 
 ```
