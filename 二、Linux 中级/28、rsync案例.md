@@ -147,6 +147,10 @@
 	（2）推送文件
 		rsync -az /backup/$dir rsync_backup@172.16.1.41::backup
 
+4、客户端服务器本地保留最近7天的数据, 避免浪费磁盘空间
+	find /backup/ -mtime +7|xargs rm -rf
+
+
 ```
 
 ```bash
