@@ -200,6 +200,10 @@ test.sh 脚本：
 		[root@backup ~]# mkdir -p /server/scripts
 		[root@backup ~]# cd /server/scripts
 		[root@backup scripts]# vim check.sh
+		[root@backup scripts]# cat check.sh 
+		#1、服务端需要每天校验客户端推送过来的数据是否完整
+		Date=`date +%F`
+		md5sum -c /backup/*_*_*/*.log > /backup/$Date.log
 
 
 3.服务端需要每天校验的结果通知给管理员 
