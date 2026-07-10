@@ -164,6 +164,20 @@
 sh -x test.sh #可查看test.sh的执行流程
 
 test.sh 脚本：
-
-
+	#1、客户端提前准备存放备份的目录，目录命名规则如下：主机名_ip地址_时间
+	Date=`date +%F-%H-%M`
+	dir=`hostname`_`hostname -I|awk '{print $1}'`_$Date
+	mkdir -p /backup/$dir
+	
+	#2、客户端在本地打包备份放至创建的目录中
+	tar zcf /backup/$dir/etc_$Date.tar.gz /etc/hosts /etc/passwd &>/dev/null
+	
+	#3、客户端最后将备份的数据进行推送至备份服务器
+	export RSYNC_PASSWORD=123456
+	rsync -az /backup/$dir rsync_backup@172.16.1.41::backup
+	
+	#4、客户端服务器本地保留最近7天的数据, 避免浪费磁盘空间
+	find /backup/ -mtime +7|xargs rm -rf
 ```
+
+5、服务端需求
