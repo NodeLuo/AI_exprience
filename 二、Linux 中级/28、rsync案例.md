@@ -216,5 +216,7 @@ test.sh 脚本：
 			set smtp‐auth=login 
 			set ssl‐verify=ignore 
 			set nss‐config‐dir=/etc/pki/nssdb/
+	（3）第三方邮箱授权，以QQ为例
+		QQ邮箱 -> 设置 -> 账号与安全 -> 安全设置
 4.服务端仅保留6个月的备份数据,其余的全部删除
 ```
