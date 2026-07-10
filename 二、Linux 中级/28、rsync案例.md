@@ -210,14 +210,15 @@ test.sh 脚本：
 	（2）配置邮件服务
 		vim /etc/mail.rc #进入最后一行粘贴以下内容
 			set from=253097001@qq.com 
-			set smtp=smtps://smtp.qq.com:465 
-			set smtp‐auth‐user=253097001@qq.com 
-			set smtp‐auth‐password=#客户端授权码 
-			set smtp‐auth=login 
-			set ssl‐verify=ignore 
-			set nss‐config‐dir=/etc/pki/nssdb/
+			set smtp=smtps://smtp.qq.com:465 set smtp-auth=login 
+			set smtp-auth-user=253097001@qq.com 
+			set smtp-auth-password=你的16位QQ邮箱授权码 
+			set ssl-verify=ignore 
+			set nss-config-dir=/etc/pki/nssdb
 	（3）第三方邮箱授权，以QQ为例
 		QQ邮箱 -> 设置 -> 账号与安全 -> 安全设置 -> POP3/IMAP/SMTP/Exchange/CardDAV 服务 -> 点击开启（发送短信） -> 获取授权码
+	（4）发送邮件
+		mail -s "title" 253097001@qq.com < /backup/1.log
 		
 4.服务端仅保留6个月的备份数据,其余的全部删除
 ```
