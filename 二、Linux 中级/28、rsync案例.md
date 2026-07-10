@@ -208,6 +208,13 @@ test.sh 脚本：
 	（1）安装邮件服务
 		yum -y install mailx
 	（2）配置邮件服务
-		vim 
+		vim /etc/mail.rc #进入最后一行粘贴以下内容
+			set from=253097001@qq.com 
+			set smtp=smtps://smtp.qq.com:465 
+			set smtp‐auth‐user=253097001@qq.com 
+			set smtp‐auth‐password=#客户端授权码 
+			set smtp‐auth=login 
+			set ssl‐verify=ignore 
+			set nss‐config‐dir=/etc/pki/nssdb/
 4.服务端仅保留6个月的备份数据,其余的全部删除
 ```
