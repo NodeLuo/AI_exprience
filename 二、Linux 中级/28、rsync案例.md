@@ -132,10 +132,8 @@
 		[root@web01 ~]# ll /backup
 		total 0
 		drwxr-xr-x 2 root root 6 Jul 10 08:59 web01_10.0.0.7_2026-07-10-08-59
-```
 
-```bash
-2.客户端在本地打包备份放入创建好的目录中
+2、客户端在本地打包备份放入创建好的目录中
 	（1）创建目录
 		Date=`date +%F-%H-%M`
 		dir=`hostname`_`hostname -I|awk '{print $1}'`_$Date
@@ -144,6 +142,9 @@
 	（2）打包存入
 		tar zcf /backup/$dir/etc_$Date.tar.gz /etc/hosts /etc/passwd &>/dev/null
 
+3、客户端最后将备份的数据进行推送至备份服务器
+	（1）推送文件
+		rsync 
 ```
 
 ```bash
