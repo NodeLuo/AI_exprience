@@ -105,7 +105,14 @@
 			2026-07-10-08-47
 	
 	（2）变量创建
-	
+		[root@web01 ~]# dir=`hostname`_`hostname -I|awk '{print $1}'`_`date +%F-%H-%M`
+		[root@web01 ~]# echo $dir
+		web01_10.0.0.7_2026-07-10-08-59
+		[root@web01 ~]# mkdir -p /backup/$dir
+		[root@web01 ~]# ll /backup
+		total 0
+		drwxr-xr-x 2 root root 6 Jul 10 08:59 web01_10.0.0.7_2026-07-10-08-59
+
 
 
 ```
