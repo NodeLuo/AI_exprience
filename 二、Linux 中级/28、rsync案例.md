@@ -127,8 +127,27 @@
 ```
 
 ```bash
+2.客户端在本地打包备份放入创建好的目录中
+	（1）创建目录
+		Date=`date +%F-%H-%M`
+		dir=`hostname`_`hostname -I|awk '{print $1}'`_$Date
+		mkdir -p /backup/$dir
+	
+	（2）打包存入
+		tar zcf /backup/$dir/etc_$Date.tar.gz /etc/hosts /etc/passwd &>/dev/null
+
+```
+
+```bash
 [root@web01 ~]# mkdir -p /server/scripts
 [root@web01 ~]# cd /server/scripts
+
+[root@web01 ~]# vim test.sh
+
+sh -x test.sh #可查看test.sh的执行流程
+
+test.sh 脚本：
+
 
 ```
 
