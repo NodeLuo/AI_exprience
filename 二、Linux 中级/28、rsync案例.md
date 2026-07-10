@@ -209,7 +209,7 @@ test.sh 脚本：
 		yum -y install mailx
 	（2）配置邮件服务
 		vim /etc/mail.rc #进入最后一行粘贴以下内容
-			set from=253097001@qq.com 
+			set from=25309700@qq.com 
 			set smtp=smtps://smtp.qq.com:465 set smtp-auth=login 
 			set smtp-auth-user=253097001@qq.com 
 			set smtp-auth-password=你的16位QQ邮箱授权码 
@@ -221,4 +221,15 @@ test.sh 脚本：
 		mail -s "title" 253097001@qq.com < /backup/1.log &>/dev/null
 		
 4.服务端仅保留6个月的备份数据,其余的全部删除
+	check.sh 脚本：
+		#1、服务端需要每天校验客户端推送过来的数据是否完整
+		Date=`date +%F`
+		md5sum -c /backup/*_*_*/*.log > /backup/$Date.log
+		
+		#2、将校验后的结果发送到邮箱
+		mail -s "$Date 检查结果" x@qq.com < /backup/$Date.log &>/dev/null
+		
+		#3、删除180天前的数据
+		find /backup -mtime +180|xargs rm -rf
+
 ```
