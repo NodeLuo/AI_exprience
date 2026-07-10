@@ -89,6 +89,18 @@
 
 ```
 
+脚本存放位置
+```bash
+公司一般会将脚本存放在固定的位置
+寻找方法：
+	（1）find 查找
+		find / -type f -name "*.sh"
+	（2）history 查找
+		history | grep -C10 sh       #查找关于sh的上下各10行
+	（3）定时任务查找
+		cat /etc/crontab             #寻找有关sh的路径
+```
+
 4、客户端需求
 
 ```bash
@@ -112,8 +124,8 @@
 		[root@web01 ~]# ll /backup
 		total 0
 		drwxr-xr-x 2 root root 6 Jul 10 08:59 web01_10.0.0.7_2026-07-10-08-59
+```
 
-
-
+```bash
 
 ```
